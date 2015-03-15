@@ -1,0 +1,33 @@
+/*
+// Self-explanatory
+*/
+BODY {
+  font-size: 14px;
+  font-family: Calibri, Arial, Serif;
+  background-color: #333333;
+}
+a {
+  text-decoration: none;
+}
+#mal_control_strip {
+  /* Barre de top */
+}
+/*
+// Determines the positioning of your list
+*/
+#list_surround {
+  margin: auto;
+  width: 638px;
+}
+#list_surround table {
+  background: green;
+  /* Navigation catégorie */
+}
+#list_surround table:nth-child(2) {
+  color: #000000;
+  background: #ffffff;
+  width: 100%;
+  height: 50px;
+  padding-top: 0px !important;
+  margin-top: 0px !important;
+}
