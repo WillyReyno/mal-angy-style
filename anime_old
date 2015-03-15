@@ -1,0 +1,254 @@
+/*
+// Self-explanatory
+*/
+BODY
+{
+    font-size: 14px;
+    font-family : Calibri, Arial, Serif;
+    background-image: url(http://exicut.free.fr/animelist/fondmal2.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #000000;
+    background-position: center;
+
+}
+
+/*
+// Determines the positioning of your list
+*/
+
+#list_surround
+{
+    margin : auto;
+    margin-bottom: 20px;
+    width:638px;
+    background-image: url(http://exicut.free.fr/animelist/select.png);
+    background-repeat: no-repeat;
+
+}
+
+/*
+// All links on your list
+*/
+
+a
+{
+    color:#000000;
+}
+a:hover
+{
+    color:#ffffff;
+}
+
+/*
+// Alternating row color 1
+*/
+
+.td1 /* Ligne 1,3,5... */
+        {
+
+    color: ;
+    border-width: ;
+    border-style: ;
+    border-color: ;
+    padding: ;
+    background-image: url(http://exicut.free.fr/animelist/monochrome.png);
+    background-repeat: repeat-y;
+}
+
+/*
+// Alternating row color 2
+*/
+
+.td2
+{
+
+    color: ;
+    border-width: ;
+    border-style: ;
+    border-color: ;
+    padding: ;
+    background-image:;
+    background-image: url(http://exicut.free.fr/animelist/monochrome.png);
+    background-repeat: repeat-y;
+}
+
+/*
+// This represents the "Anime Title", "Score", "# Eps" columns
+*/
+
+.table_header
+{
+
+    color: ;
+    border-width: ;
+    border-style: ;
+    border-color: ;
+    background-image: url(http://exicut.free.fr/animelist/monochrome.png);
+    padding: ;
+}
+
+/*
+// headerLink represents the color of the links inside the_header
+*/
+
+.table_headerLink
+{
+    color:#000000;
+}
+
+.table_headerLink:Visited
+{
+    color:#000000 ;
+}
+
+.table_headerLink:Hover
+{
+    color:#ffffff ;
+}
+
+/*
+// Controls the select form decoration (the drop down select box)
+*/
+
+.form
+{
+    border-width: ;
+    border-color: ;
+    border-style: ;
+    color: ;
+    padding: ;
+    font-size: px;
+    font-family: ;
+}
+
+
+/* Which 'status' up top is selected? */
+
+.status_selected
+{
+
+    color: ;
+    border-width: ;
+    border-style: ;
+    border-color: ;
+    padding: ;
+    background-color: ;
+    font-size: 12px;
+}
+
+.status_not_selected
+{
+
+    color: ;
+    border-width: ;
+    border-style: ;
+    border-color: ;
+    padding: ;
+    font-size : 12px;
+}
+
+/*
+Header classes for Currently Watching, Completed, Dropped, etc...
+*/
+
+.header_cw
+{
+    padding-left:2px;
+    background-repeat : no-repeat;
+    background-image: url(http://exicut.free.fr/animelist/watching.png);
+    height : 90px;
+}
+
+.header_completed
+{
+    padding-left:2px;
+    background-repeat : no-repeat;
+    background-image: url(http://exicut.free.fr/animelist/completed.png);
+    height : 90px;
+}
+
+.header_onhold
+{
+    padding-left:2px;
+    background-repeat : no-repeat;
+    background-image: url(http://exicut.free.fr/animelist/onhold.png);
+    height : 90px;
+}
+
+.header_dropped
+{
+    padding-left:2px;
+    background-repeat : no-repeat;
+    background-image: url(http://exicut.free.fr/animelist/dropped.png);
+    height : 90px;
+}
+
+.header_ptw
+{
+    padding-left:2px;
+    background-repeat : no-repeat;
+    background-image: url(http://exicut.free.fr/animelist/plantowatch.png);
+    height : 90px;
+}
+
+.header_title {display: none;}
+
+
+.category_totals
+{
+    font-size:11px;
+    text-align : center;
+    background-image: url(http://exicut.free.fr/animelist/total.png);
+    background-repeat:no-repeat;
+    height:65px;
+    padding-bottom:20px;
+}
+
+#grand_totals
+{
+    text-align: center;
+    color:#ffffff;
+}
+
+/* header_al is thesurrounding "User's Anime List" at the top */
+
+.header_al
+{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* header_al_links is thewith your "Profile" and "MyAnimeList home" links */
+.header_al_links
+{
+
+}
+
+/* controls what styles you can give to all the anime titles in your list */
+.animetitle
+{
+    font-weight: bold;
+}
+
+/*
+copyright contains the "Producted by Garrett Gyssler" text
+DO NOT REMOVE OR HIDE THIS DIV
+IF FOUND TO BE REMOVED, YOUR LIST WILL BE REMOVED TOO
+*/
+
+#copyright
+{
+    margin : auto;
+    text-align: center;
+    color:#ffffff;
+}
+
+#copyright a:link
+{
+    color:#ffffff;
+}
+#copyright a:visited
+{
+    color:#ffffff;
+}

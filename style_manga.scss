@@ -1,0 +1,287 @@
+/*! Myanimestrap * incrowd.ws/mas * LGPL2 */
+
+$brand-primary: #4cae4c;
+
+$bg-color: #333;
+$text-color: #333;
+$font-size-base: 14px;
+$font-size-h1: ceil($font-size-base * 1.7);
+$font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$link-color: $brand-primary;
+$link-hover-color: darken($link-color, 15%);
+$copyright-color: #999;
+
+$status-active-bg: $brand-primary;
+$status-active-color: #fff;
+$status-hover-bg: #eee;
+
+$table-border-color: #ddd;
+$table-bg-accent: #f9f9f9;
+$table-bg-accent-odd: #fff;
+
+// @include "reset";
+/* begin reset */
+
+.table_header, .td1, .td2 {
+  border-width: 0 !important; // yep, you'll need to override it with !important too
+}
+
+/* end reset */
+
+body {
+  margin: 0;
+  color: $text-color;
+  font-size: $font-size-base;
+  font-family: $font-family;
+  background: $bg-color;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+
+a:visited {
+  color: $link-color;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $link-hover-color;
+  text-decoration: underline;
+}
+
+%container {
+  margin: 0 auto;
+  width: 920px;
+}
+
+%status-filter {
+  height: 40px;
+
+  %item {
+    display: block;
+    padding: 10px 15px;
+    position: relative;
+    border-radius: 4px 4px 4px 4px;
+    margin-left: 2px;
+
+    &:hover {
+      background-color: $status-hover-bg;
+      text-decoration: none;
+    }
+
+    &%active, &:hover%active {
+      background-color: $status-active-bg;
+      color: $status-active-color;
+      text-decoration: none;
+    }
+  }
+}
+
+%h1 {
+  font-size: $font-size-h1;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+%th-td, %tr-td {
+  border-width: 1px;
+  border-style: solid;
+  border-color: $table-border-color;
+  padding: 8px;
+
+  &:not(:first-child) {
+    border-left-width: 1px !important;
+  }
+}
+
+%th-td {
+  font-weight: 700;
+}
+
+%tr-td {
+  border-top-width: 1px !important;
+}
+
+%even-td {
+  background-color: $table-bg-accent;
+}
+
+%odd-td {
+  background-color:$table-bg-accent-odd;
+
+}
+
+%title-status {
+  display: none;
+}
+
+/** Magic happens here: */
+
+// First of all, we CAN'T use these selectors:
+// A > B
+// table
+// td
+// tr (probably)
+//
+// So we replace them:
+// `table` -> `[cellspacing]` (as all `table`s have `cellspacing` attribute)
+// `td` -> some class-related stuff
+
+$-mas-version: "1.0.2";
+
+#list_surround {
+  @extend %container !optional;
+
+  //
+  // Status filter
+  // -------------
+  [cellspacing]:nth-of-type(1) {
+    // This is a `table` element that holds the list
+
+    width: 0; // This makes it SHRINK
+
+    @extend %status-filter !optional;
+
+    .status_not_selected {
+      a {
+        color:white;
+        &:hover {
+          color:$brand-primary;
+        }
+      }
+    }
+
+    .status_not_selected, .status_selected {
+      // These are `td`s
+
+
+      white-space: nowrap;
+
+      a {
+        @extend %item !optional;
+      }
+    }
+
+    .status_selected a {
+      @extend %active !optional;
+    }
+  }
+
+  .header_title {
+
+    margin-bottom: 20px;
+  }
+  .header_title span {
+    @extend %h1 !optional;
+    text-transform: uppercase;
+    color:#fff;
+  }
+
+  .header_cw + *, .header_completed + *, .header_onhold + *, .header_dropped + *, .header_ptw + * {
+    // These are the very first `table`s of real tables
+    @extend %th !optional;
+
+    .table_header {
+      @warn "This produces very complicated selector. Try to use %th-td instead.";
+      @extend %td !optional;
+    }
+  }
+
+  :not([class^="header_"]) + [cellspacing]:not([class^="header_"]) {
+    // These are any `table`s except for `%th`s and headers
+    @extend %tr !optional;
+
+    .table_header {
+      @warn "This produces very complicated selector. Try to use %tr-td, %even-td or %odd-td instead.";
+      @extend %td !optional;
+    }
+  }
+}
+
+.table_header {
+  @extend %td !optional;
+  @extend %th-td !optional;
+  background:$table-bg-accent-odd;
+}
+
+.td1, .td2 {
+  @extend %td !optional;
+  @extend %tr-td !optional;
+}
+
+.td1 {
+  @extend %even-td !optional;
+}
+
+.td2 {
+  @extend %odd-td !optional;
+}
+
+.category_totals {
+  // TODO!
+  display: none;
+}
+
+#grand_totals {
+  // TODO!
+  display: none;
+}
+
+.header_al {
+  // TODO!
+  // header_al is the div surrounding "User's Anime List" at the top
+  // I don't have this one! o_O
+  display: none;
+}
+
+.animetitle {
+  // Title in the list
+
+  @extend %title !optional;
+
+  & + small {
+    // "Ongoing" etc.
+    @extend %title-status !optional;
+  }
+}
+
+.td1 [style^="float"], .td2 [style^="float"] {
+  @extend %control-links !optional;
+}
+
+.List_LightBox, .List_LightBox + * {
+  @extend %control-link !optional;
+}
+
+#copyright {
+  /*
+   * Original notice:
+   * DO NOT REMOVE OR HIDE THIS DIV
+   * IF FOUND TO BE REMOVED, YOUR LIST WILL BE REMOVED TOO
+   */
+
+  padding-top: 6px;
+  text-align: left;
+  margin: 0 auto;
+  width: 920px;
+  color: $copyright-color;
+
+  a {
+    color: $copyright-color;
+    border-bottom: 1px dotted $copyright-color;
+    &:hover {
+      color: $copyright-color;
+      border-bottom: 1px solid $copyright-color;
+      text-decoration: none;
+    }
+  }
+
+  &:after {
+    /* Ha-ha-ha, please don't remove this too :3 */
+    content: "Styled with Myanimestrap #{$-mas-version}";
+  }
+}
