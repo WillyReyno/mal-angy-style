@@ -1,0 +1,155 @@
+.table_header,
+.td1,
+.td2 {
+  border-width: 0!important;
+}
+body {
+  margin: 0;
+  color: #333333;
+  font-size: 0.85em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #333333;
+}
+a,
+a:visited {
+  color: #428bca;
+  text-decoration: none;
+}
+a:hover,
+a:visited:hover {
+  color: #3071a9;
+}
+.container,
+#list_surround {
+  margin: 0 auto;
+  width: 920px;
+}
+.status-filter,
+#list_surround [cellspacing]:nth-of-type(1) {
+  height: 40px;
+}
+.item {
+  display: block;
+  padding: 10px 15px;
+  position: relative;
+  border-radius: 4px 4px 4px 4px;
+  margin-left: 2px;
+}
+.active,
+#list_surround [cellspacing]:nth-of-type(1) .status_selected a {
+  background: #428bca;
+  color: #ffffff;
+  text-decoration: none;
+}
+.h1,
+#list_surround .header_title span {
+  font-size: 2em;
+  margin: 10px 0;
+  letter-spacing: 1px;
+}
+.th-td,
+.tr-td,
+.table_header,
+.td1,
+.td2 {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #dddddd;
+  padding: 8px;
+}
+.th-td:not(:first-child),
+.tr-td:not(:first-child) {
+  border-left-width: 1px !important;
+}
+.th-td,
+.table_header {
+  font-weight: 700;
+}
+.tr-td,
+.td1,
+.td2 {
+  border-top-width: 1px !important;
+}
+.even-td,
+.td1 {
+  background: #f9f9f9;
+}
+.odd-td,
+.td2 {
+  background: #ffffff;
+}
+.title-status {
+  display: none;
+}
+#list_surround [cellspacing]:nth-of-type(1) {
+  width: 0;
+}
+#list_surround [cellspacing]:nth-of-type(1) .status_not_selected a {
+  color: #ffffff;
+}
+#list_surround [cellspacing]:nth-of-type(1) .status_not_selected a:hover {
+  color: #428bca;
+}
+#list_surround [cellspacing]:nth-of-type(1) .status_not_selected,
+#list_surround [cellspacing]:nth-of-type(1) .status_selected {
+  white-space: nowrap;
+}
+#list_surround [cellspacing]:nth-of-type(1) .status_not_selected a,
+#list_surround [cellspacing]:nth-of-type(1) .status_selected a {
+  display: block;
+  padding: 10px 15px;
+  position: relative;
+  border-radius: 4px 4px 4px 4px;
+  margin-left: 2px;
+}
+#list_surround [cellspacing]:nth-of-type(1) .status_not_selected a:hover,
+#list_surround [cellspacing]:nth-of-type(1) .status_selected a:hover {
+  background: #eeeeee;
+  text-decoration: none;
+}
+#list_surround .header_title {
+  margin: 0 0 20px 0;
+}
+#list_surround .header_title span {
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.table_header {
+  background: #ffffff;
+  color: #333333 !important;
+}
+.table_header .table_headerLink {
+  color: #333333 !important;
+}
+.td1 {
+  background: #f9f9f9;
+}
+#grand_totals,
+.category_totals {
+  padding-top: 10px;
+  color: #ffffff;
+  text-align: center;
+}
+.animetitle + small {
+  display: none;
+}
+#copyright {
+  /*
+   * DO NOT REMOVE OR HIDE THIS DIV
+   * IF FOUND TO BE REMOVED, YOUR LIST WILL BE REMOVED TOO
+   */
+  padding-top: 6px;
+  text-align: left;
+  margin: 0 auto;
+  width: 920px;
+  color: #999999;
+}
+#copyright a {
+  color: #999999;
+  border-bottom: 1px dotted #999999;
+}
+#copyright a:hover {
+  color: #999999;
+  border-bottom: 1px solid #999999;
+  text-decoration: none;
+}
