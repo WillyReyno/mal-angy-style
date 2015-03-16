@@ -1,107 +1,140 @@
-/*! Myanimestrap * incrowd.ws/mas * LGPL2 */
-/* begin reset */
-.table_header, .td1, .td2 {
-  border-width: 0 !important; }
-
-/* end reset */
+.table_header,
+.td1,
+.td2 {
+  border-width: 0!important;
+}
 body {
   margin: 0;
-  color: #333;
-  font-size: 14px;
+  color: #333333;
+  font-size: 0.85em;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: #333; }
-
-a {
-  color: #4cae4c;
-  text-decoration: none; }
-
+  background: #333333;
+}
+a,
 a:visited {
   color: #4cae4c;
-  text-decoration: none; }
-
-a:hover {
-  color: #357935;
-  text-decoration: underline; }
-
+  text-decoration: none;
+}
+a:hover,
+a:visited:hover {
+  color: #3c8b3c;
+}
+.container,
 #list_surround {
   margin: 0 auto;
-  width: 920px; }
-
+  width: 920px;
+}
+.status-filter,
 #list_surround [cellspacing]:nth-of-type(1) {
-  height: 40px; }
-  #list_surround [cellspacing]:nth-of-type(1) .status_not_selected a, #list_surround [cellspacing]:nth-of-type(1) .status_selected a {
-    display: block;
-    padding: 10px 15px;
-    position: relative;
-    border-radius: 4px 4px 4px 4px;
-    margin-left: 2px; }
-    #list_surround [cellspacing]:nth-of-type(1) .status_not_selected a:hover, #list_surround [cellspacing]:nth-of-type(1) .status_selected a:hover {
-      background-color: #eee;
-      text-decoration: none; }
-    #list_surround [cellspacing]:nth-of-type(1) .status_selected a, #list_surround [cellspacing]:nth-of-type(1) .status_selected a:hover {
-      background-color: #4cae4c;
-      color: #fff;
-      text-decoration: none; }
-
+  height: 40px;
+}
+.item {
+  display: block;
+  padding: 10px 15px;
+  position: relative;
+  border-radius: 4px 4px 4px 4px;
+  margin-left: 2px;
+}
+.active,
+#list_surround [cellspacing]:nth-of-type(1) .status_selected a {
+  background: #4cae4c;
+  color: #ffffff;
+  text-decoration: none;
+}
+.h1,
 #list_surround .header_title span {
-  font-size: 24px;
-  font-weight: 500;
-  margin-top: 10px;
-  margin-bottom: 10px; }
-
-.table_header, .td1, .td2 {
+  font-size: 2em;
+  margin: 10px 0;
+  letter-spacing: 1px;
+}
+.th-td,
+.tr-td,
+.table_header,
+.td1,
+.td2 {
   border-width: 1px;
   border-style: solid;
-  border-color: #ddd;
-  padding: 8px; }
-  .table_header:not(:first-child), .td1:not(:first-child), .td2:not(:first-child) {
-    border-left-width: 1px !important; }
-
+  border-color: #dddddd;
+  padding: 8px;
+}
+.th-td:not(:first-child),
+.tr-td:not(:first-child) {
+  border-left-width: 1px !important;
+}
+.th-td,
 .table_header {
-  font-weight: 700; }
-
-.td1, .td2 {
-  border-top-width: 1px !important; }
-
-.td1 {
-  background-color: #f9f9f9; }
-
+  font-weight: 700;
+}
+.tr-td,
+.td1,
 .td2 {
-  background-color: #fff; }
-
-.animetitle + small {
-  display: none; }
-
-/** Magic happens here: */
+  border-top-width: 1px !important;
+}
+.even-td,
+.td1 {
+  background: #f9f9f9;
+}
+.odd-td,
+.td2 {
+  background: #ffffff;
+}
+.title-status {
+  display: none;
+}
 #list_surround [cellspacing]:nth-of-type(1) {
-  width: 0; }
-  #list_surround [cellspacing]:nth-of-type(1) .status_not_selected a {
-    color: white; }
-    #list_surround [cellspacing]:nth-of-type(1) .status_not_selected a:hover {
-      color: #4cae4c; }
-  #list_surround [cellspacing]:nth-of-type(1) .status_not_selected, #list_surround [cellspacing]:nth-of-type(1) .status_selected {
-    white-space: nowrap; }
+  width: 0;
+}
+#list_surround [cellspacing]:nth-of-type(1) .status_not_selected a {
+  color: #ffffff;
+}
+#list_surround [cellspacing]:nth-of-type(1) .status_not_selected a:hover {
+  color: #4cae4c;
+}
+#list_surround [cellspacing]:nth-of-type(1) .status_not_selected,
+#list_surround [cellspacing]:nth-of-type(1) .status_selected {
+  white-space: nowrap;
+}
+#list_surround [cellspacing]:nth-of-type(1) .status_not_selected a,
+#list_surround [cellspacing]:nth-of-type(1) .status_selected a {
+  display: block;
+  padding: 10px 15px;
+  position: relative;
+  border-radius: 4px 4px 4px 4px;
+  margin-left: 2px;
+}
+#list_surround [cellspacing]:nth-of-type(1) .status_not_selected a:hover,
+#list_surround [cellspacing]:nth-of-type(1) .status_selected a:hover {
+  background: #eeeeee;
+  text-decoration: none;
+}
 #list_surround .header_title {
-  margin-bottom: 20px; }
+  margin: 0 0 20px 0;
+}
 #list_surround .header_title span {
   text-transform: uppercase;
-  color: #fff; }
-
+  color: #ffffff;
+}
 .table_header {
-  background: #fff; }
-
+  background: #ffffff;
+  color: #333333 !important;
+}
+.table_header .table_headerLink {
+  color: #333333 !important;
+}
+.td1 {
+  background: #f9f9f9;
+}
+#grand_totals,
 .category_totals {
-  display: none; }
-
-#grand_totals {
-  display: none; }
-
-.header_al {
-  display: none; }
-
+  padding-top: 10px;
+  color: #ffffff;
+  text-align: center;
+}
+.animetitle + small {
+  display: none;
+}
 #copyright {
   /*
-   * Original notice:
    * DO NOT REMOVE OR HIDE THIS DIV
    * IF FOUND TO BE REMOVED, YOUR LIST WILL BE REMOVED TOO
    */
@@ -109,16 +142,14 @@ a:hover {
   text-align: left;
   margin: 0 auto;
   width: 920px;
-  color: #999; }
-  #copyright a {
-    color: #999;
-    border-bottom: 1px dotted #999; }
-    #copyright a:hover {
-      color: #999;
-      border-bottom: 1px solid #999;
-      text-decoration: none; }
-  #copyright:after {
-    /* Ha-ha-ha, please don't remove this too :3 */
-    content: "Styled with Myanimestrap 1.0.2"; }
-
-/*# sourceMappingURL=style_manga.css.map */
+  color: #999999;
+}
+#copyright a {
+  color: #999999;
+  border-bottom: 1px dotted #999999;
+}
+#copyright a:hover {
+  color: #999999;
+  border-bottom: 1px solid #999999;
+  text-decoration: none;
+}

@@ -1,0 +1,217 @@
+@primary: #4cae4c;
+@background: #333;
+@text: #333;
+@white: #fff;
+@white-alt:#f9f9f9;
+@grey: #eee;
+@greyplus: #ddd;
+
+@link-color: @primary;
+@link-color-hover: darken(@primary, 10%);
+@copyright-color:#999;
+
+@status-active-bg:@primary;
+@status-active-color:@white;
+@status-hover-bg:@grey;
+
+@table-border-color:@greyplus;
+@table-bg-accent: @white-alt;
+@table-bg-accent-odd: @white;
+
+.table_header, .td1, .td2 {
+  border-width: 0!important;
+}
+
+body {
+  margin:0;
+  color:@text;
+  font-size:0.85em;
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+  background:@background;
+}
+
+a, a:visited {
+  color:@link-color;
+  text-decoration: none;
+  &:hover {
+    color:@link-color-hover;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  width:920px;
+}
+
+.status-filter {
+  height:40px;
+}
+
+.item {
+  display:block;
+  padding:10px 15px;
+  position:relative;
+  border-radius: 4px 4px 4px 4px;
+  margin-left:2px;
+}
+
+.active {
+  background: @status-active-bg;
+  color: @status-active-color;
+  text-decoration: none;
+}
+
+.h1 {
+  font-size:2em;
+  margin:10px 0;
+  letter-spacing: 1px;
+}
+
+.th-td, .tr-td {
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: @table-border-color;
+  padding:8px;
+
+  &:not(:first-child) {
+    border-left-width: 1px !important;
+  }
+}
+
+.th-td {
+  font-weight:700;
+}
+
+.tr-td {
+  border-top-width: 1px !important;
+}
+
+.even-td {
+  background: @table-bg-accent;
+}
+
+.odd-td {
+  background:@table-bg-accent-odd;
+}
+
+.title-status {
+  display: none;
+}
+
+#list_surround {
+  &:extend(.container);
+
+  [cellspacing]:nth-of-type(1) {
+    width:0;
+
+    &:extend(.status-filter);
+
+    .status_not_selected {
+      a {
+        color:@white;
+        &:hover {
+          color:@primary;
+        }
+      }
+    }
+
+    .status_not_selected, .status_selected {
+      white-space: nowrap;
+
+      a {
+        display:block;
+        padding:10px 15px;
+        position:relative;
+        border-radius: 4px 4px 4px 4px;
+        margin-left:2px;
+        &:hover {
+          background:@status-hover-bg;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .status_selected a {
+      &:extend(.active);
+
+    }
+  }
+
+  .header_title {
+    margin: 0 0 20px 0;
+
+    span {
+      &:extend(.h1);
+      text-transform: uppercase;
+      color: @white;
+    }
+  }
+
+  .header_cw, .header_completed, .header_onhold, .header_dropped, .header_ptw {
+    // Watching, Completed...
+    &:extend(.th);
+  }
+}
+
+.table_header {
+  &:extend(.td);
+  &:extend(.th-td);
+  background: @table-bg-accent-odd;
+  color:@background !important;
+  .table_headerLink {
+    color:@background !important;
+  }
+
+}
+
+.td1, .td2 {
+  &:extend(.tr-td);
+}
+
+.td1 {
+  &:extend(.even-td);
+  background:@white-alt;
+}
+
+.td2 {
+  &:extend(.odd-td);
+}
+
+#grand_totals, .category_totals {
+  padding-top:10px;
+  color:@white;
+  text-align: center;
+}
+
+
+.animetitle {
+  & + small {
+    // Not Yet Aired / Airing...
+    display:none;
+  }
+}
+
+
+#copyright {
+  /*
+   * DO NOT REMOVE OR HIDE THIS DIV
+   * IF FOUND TO BE REMOVED, YOUR LIST WILL BE REMOVED TOO
+   */
+
+  padding-top: 6px;
+  text-align: left;
+  margin: 0 auto;
+  width: 920px;
+  color: @copyright-color;
+
+  a {
+    color: @copyright-color;
+    border-bottom: 1px dotted @copyright-color;
+    &:hover {
+      color: @copyright-color;
+      border-bottom: 1px solid @copyright-color;
+      text-decoration: none;
+    }
+  }
+}
